@@ -1,4 +1,4 @@
-﻿Shader "Custom/3_03_Phong" {
+﻿Shader "BruceEvans/3_03_Phong" {
 	Properties {
 		_MainTint ("Main Tint", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
