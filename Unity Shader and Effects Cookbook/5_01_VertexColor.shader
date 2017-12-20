@@ -7,31 +7,31 @@ Shader "BruceEvans/5_01_VertexColor"
 
 	SubShader 
 	{
-		Tags { "RenderType"="Opaque" }
-		LOD 200
+	Tags { "RenderType"="Opaque" }
+	LOD 200
 
-		CGPROGRAM
-		#pragma surface surf Lambert vertex:vert
+	CGPROGRAM
+	#pragma surface surf Lambert vertex:vert
 
         float4 _MainTint;
 
-		struct Input 
-		{
-			float2 uv_MainTex;
-            float4 vertColor;
-		};
+	struct Input 
+	{
+		float2 uv_MainTex;
+		float4 vertColor;
+	};
 
         void vert(inout appdata_full v, out Input o) 
         {
         	UNITY_INITIALIZE_OUTPUT(Input, o);
-            o.vertColor = v.color;
+           	o.vertColor = v.color;
         }
 
-		void surf (Input IN, inout SurfaceOutput o) 
-		{
+	void surf (Input IN, inout SurfaceOutput o) 
+	{
             o.Albedo = IN.vertColor.rgb * _MainTint.rgb;
-		}
-		ENDCG
+	}
+	ENDCG
 	}
 	FallBack "Diffuse"
 }
